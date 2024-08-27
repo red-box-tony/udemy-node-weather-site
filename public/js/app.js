@@ -18,19 +18,17 @@ weatherForm.addEventListener("submit", (e) => {
 
   const location = search.value;
 
-  fetch("http://localhost:3000/weather?address=" + location).then(
-    (response) => {
-      response.json().then((data) => {
-        msg1.textContent = "";
-        if (data.error) {
-          msg1.textContent = data.error;
-        } else {
-          //   console.log(data.temperature);
-          //     console.log(data.address);
-          msg2.textContent =
-            "Temperature: " + data.temperature + " degrees at " + data.address;
-        }
-      });
-    }
-  );
+  fetch("/weather?address=" + location).then((response) => {
+    response.json().then((data) => {
+      msg1.textContent = "";
+      if (data.error) {
+        msg1.textContent = data.error;
+      } else {
+        //   console.log(data.temperature);
+        //     console.log(data.address);
+        msg2.textContent =
+          "Temperature: " + data.temperature + " degrees at " + data.address;
+      }
+    });
+  });
 });

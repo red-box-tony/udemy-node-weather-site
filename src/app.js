@@ -10,6 +10,8 @@ const forecast = require("./Utils/forecast");
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 // Define paths for express config
 const viewsPath = path.join(__dirname, "../templates/views"); //set variable to templates location
 const partialsPath = path.join(__dirname, "../templates/partials"); //set variable to partials location
@@ -136,6 +138,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+app.listen(port, () => {
+  console.log("Server running on port " + port);
 });
