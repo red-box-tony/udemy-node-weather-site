@@ -22,7 +22,7 @@ const forecast = (longitude, latitude, address, callback) => {
         );
       } else {
         // const data = JSON.parse(response.body);
-        // console.log(response.body.current);
+        // console.log(body.current);
         const current = body.current;
         callback(undefined, {
           address: address,

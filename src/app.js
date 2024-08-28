@@ -100,6 +100,7 @@ app.get("/weather", (req, res) => {
           forecast: description,
           temperature: temperature,
           feelslike: feelslike,
+          description: description,
           address,
         });
       }

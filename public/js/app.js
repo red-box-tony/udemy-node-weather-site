@@ -10,6 +10,7 @@ const weatherForm = document.querySelector("form");
 const search = document.querySelector("input");
 const msg1 = document.querySelector("#errorMsg");
 const msg2 = document.querySelector("#weather");
+const msg3 = document.querySelector("#weather2");
 
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault(); // prevents form refreshing page
@@ -28,6 +29,8 @@ weatherForm.addEventListener("submit", (e) => {
         //     console.log(data.address);
         msg2.textContent =
           "Temperature: " + data.temperature + " degrees at " + data.address;
+        msg3.textContent =
+          "Description: " + data.description + " feels like: " + data.feelslike;
       }
     });
   });
